@@ -1,0 +1,31 @@
+<div ng-show="bikes.length">
+  <h1>Here is your list of bikes:</h1>
+  <ul>
+    <li ng-repeat="item in bikes">
+      <a ui-sref="bikes.repairs({bikeId: item.id})">Customer name: {{item.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="col-md-8">
+  <h3>Add a bike that needs repairs</h3>
+  <form ng-submit="BikesFactory.addBike()" class="form-horizontal" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="BikesFactory.customerName" class="form-control" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="BikesFactory.brandName" class="form-control" placeholder="Enter the bike's brand">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="BikesFactory.modelName" class="form-control" placeholder="Enter the bike's model">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="BikesFactory.bikeYear" class="form-control" placeholder="Enter the bike's year">
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div ui-view> </div>

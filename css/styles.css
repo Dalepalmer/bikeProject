@@ -1,0 +1,16 @@
+body {
+  background-image: url('wood-background.jpg');
+
+}
+
+.jumbotron {
+  color: rgb(255, 199, 15);
+  background: rgba(22, 41, 85, .40);
+  border-color: black;
+  border-width: 3px;
+  border-radius: 13px;
+}
+
+.form-control {
+  width: 45%;  
+}
