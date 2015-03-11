@@ -1,16 +1,23 @@
 require 'json'
+require 'spec_helper'
+
 
 def bike_diagnosis symptom
-  # symptoms.each do symptom
+    symptom.downcase()
     case symptom
     when "squeaky brakes"
-      puts "Replace the brakes"
+      return "Replace the brakes"
     when "flat tire"
-      puts "Replace tube and possibly tire"
+      return "Replace tube and possibly tire"
     when "squeaky drivetrain"
-      puts "Chains need lubrication, and a possibly tune up"
+      return "Chains need lubrication, and a possibly tune up"
     when "wheel out of true"
-      puts "Wheel needs trued"
+      return "Wheel needs trued"
+    when "wheel out of true"
+      return "Wheel needs trued"
+    when "wheel out of true", "squeaky brakes"
+      return "Wheel needs trued & replace brakes"
+    else
+      return "Unknown Diagnosis"
     end
   end
-# end

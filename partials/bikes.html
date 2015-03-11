@@ -1,5 +1,5 @@
 <div ng-show="bikes.length">
-  <h1>Here is your list of bikes:</h1>
+  <h1>Here is the list of bikes to repair:</h1>
   <ul>
     <li ng-repeat="item in bikes">
       <a ui-sref="bikes.repairs({bikeId: item.id})">Customer name: {{item.name}}</a>
@@ -11,16 +11,19 @@
   <h3>Add a bike that needs repairs</h3>
   <form ng-submit="BikesFactory.addBike()" class="form-horizontal" role="form">
     <div class="form-group">
-      <input type="text" ng-model="BikesFactory.customerName" class="form-control" placeholder="Enter your name">
+      <input type="text" ng-model="BikesFactory.customerName" class="form-control" placeholder="Enter your name" required>
     </div>
     <div class="form-group">
-      <input type="text" ng-model="BikesFactory.brandName" class="form-control" placeholder="Enter the bike's brand">
+      <input type="text" ng-model="BikesFactory.customerPhone" class="form-control" placeholder="Enter your phone number" required>
     </div>
     <div class="form-group">
-      <input type="text" ng-model="BikesFactory.modelName" class="form-control" placeholder="Enter the bike's model">
+      <input type="text" ng-model="BikesFactory.brandName" class="form-control" placeholder="Enter the bike's brand" required>
     </div>
     <div class="form-group">
-      <input type="text" ng-model="BikesFactory.bikeYear" class="form-control" placeholder="Enter the bike's year">
+      <input type="text" ng-model="BikesFactory.modelName" class="form-control" placeholder="Enter the bike's model" required>
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="BikesFactory.bikeYear" class="form-control" placeholder="Enter the bike's year" required>
     </div>
     <div class="form-group">
     <button type="submit" class="btn btn-success">Submit</button>
