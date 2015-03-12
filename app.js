@@ -1,4 +1,4 @@
-var bikeProject = angular.module('bikeProject', ['ui.router']);
+var bikeProject = angular.module('bikeProject', ['ui.router', 'firebase']);
 
 bikeProject.config(function($stateProvider) {
   $stateProvider.state('home', {

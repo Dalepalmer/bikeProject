@@ -1,8 +1,18 @@
-bikeProject.factory('BikesFactory', function BikesFactory(){
+bikeProject.factory('BikesFactory', function BikesFactory($firebaseArray, $firebaseObject) {
   var factory = {};
-  factory.bikes = [];
+  factory.bikesRef = new Firebase("//boiling-fire-9537.firebaseio.com/Bikes");;
+  var sync = $firebaseArray(factory.bikesRef);
+  factory.bikes = sync;
+
+
   factory.addBike = function() {
-    factory.bikes.push({name: factory.customerName, phone: factory.customerPhone, brand: factory.brandName, model: factory.modelName, year: factory.bikeYear,  id: factory.bikes.length + 1, repairs: [] });
+    factory.bikes.$add({
+      name: factory.customerName,
+      phone: factory.customerPhone,
+      brand: factory.brandName,
+      model: factory.modelName,
+      year: factory.bikeYear
+    });
 
     factory.customerName = null;
     factory.customerPhone = null;

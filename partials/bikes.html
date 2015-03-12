@@ -2,7 +2,7 @@
   <h1>Here is the list of bikes to repair:</h1>
   <ul>
     <li ng-repeat="item in bikes">
-      <a ui-sref="bikes.repairs({bikeId: item.id})">Customer name: {{item.name}}</a>
+      <a ui-sref="bikes.repairs({bikeId: item.$id})">Customer name: {{item.name}}</a>
     </li>
   </ul>
 </div>

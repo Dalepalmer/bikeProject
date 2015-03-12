@@ -1,14 +1,14 @@
-<div ng-show="bike.repairs.length">
+<div>
   <h2>Repair List for {{ bike.name }} </h2>
   <ul>
-    <li ng-repeat="item in bike.repairs">
-      {{ item.name }}
+    <li ng-repeat="item in bike.Repairs">
+      {{ item.repair }}
     </li>
   </ul>
 </div>
 
 <div>
-  <h2>Add a repair to {{ bike.name }}</h2>
+  <h2>Add a repair to {{ bike.name }}'s bike</h2>
   <form ng-submit="addRepair()" class="form-inline" role="form">
     <div class="form-group">
       <input type="text" ng-model="repairName" class="form-control" placeholder="What needs repaired?">
