@@ -10,10 +10,12 @@ bikeProject.controller('RepairsCtrl', function RepairsCtrl($scope, $stateParams,
   var syncRepairRef = $firebaseArray(repairRef);
 
   $scope.addRepair = function() {
-    $scope.bike = UtilitiesFactory.findById($stateParams.bikeId);
-    var newBikeRepair = repairRef.child('repairType').set({
-      repair: $scope.repairName
+
+  $scope.bike = UtilitiesFactory.findById($stateParams.bikeId);
+  var newBikeRepair = syncRepairRef.$add({
+                repair: $scope.repairName
     })
+
     $scope.repairName = null;
 
   }
