@@ -6,14 +6,14 @@ bikeProject.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
-  $stateProvider.state('bikes', {
-    url: "/bikes",
-    templateUrl: "partials/bikes.html",
+  $stateProvider.state('customerBikes', {
+    url: "/customerBikes",
+    templateUrl: "partials/customerBikes.html",
     controller: 'BikesCtrl'
   });
 
-  $stateProvider.state('bikes.repairs', {
-    url: "/:bikeId",
+  $stateProvider.state('customerBikes.repairs', {
+    url: "/:customerBikeId",
     templateUrl: "partials/bikes.repairs.html",
     controller: 'RepairsCtrl'
   });

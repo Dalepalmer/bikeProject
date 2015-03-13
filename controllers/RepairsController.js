@@ -11,7 +11,7 @@ bikeProject.controller('RepairsCtrl', function RepairsCtrl($scope, $stateParams,
 
   $scope.addRepair = function() {
     $scope.bike = UtilitiesFactory.findById($stateParams.bikeId);
-    var newBikeRepair = repairRef.child('repairType').set({
+    var newBikeRepair = repairRef.child('repairType').$add({
       repair: $scope.repairName
     })
     $scope.repairName = null;
