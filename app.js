@@ -13,8 +13,8 @@ bikeProject.config(function($stateProvider) {
   });
 
   $stateProvider.state('customerBikes.repairs', {
-    url: "/:customerBikeId",
-    templateUrl: "partials/bikes.repairs.html",
+    url: "/:bikeId",
+    templateUrl: "partials/customerBikes.repairs.html",
     controller: 'RepairsCtrl'
   });
 });
